@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "FastAPI Backend",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "legalEaseAPI.main:app",
+        "--reload"
+      ]
+    },
+    {
+      "name": "Streamlit Frontend",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "streamlit",
+      "args": [
+        "run",
+        "frontend/app.py"
+      ]
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Run LegalEase (Full App)",
+      "configurations": ["FastAPI Backend", "Streamlit Frontend"]
+    }
+  ]
+}
